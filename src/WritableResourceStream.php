@@ -314,11 +314,6 @@ final class WritableResourceStream implements WritableStream, ResourceStream
         $this->chunkSize = $chunkSize;
     }
 
-    public function __destruct()
-    {
-        $this->free();
-    }
-
     /**
      * References the writable watcher, so the loop keeps running in case there's a pending write.
      *

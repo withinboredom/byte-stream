@@ -315,13 +315,6 @@ final class ReadableResourceStream implements ReadableStream, ResourceStream, \I
         EventLoop::unreference($this->callbackId);
     }
 
-    public function __destruct()
-    {
-        if ($this->resource !== null) {
-            $this->free();
-        }
-    }
-
     /**
      * Nulls reference to resource, marks stream unreadable, and succeeds any pending read with null.
      */
